@@ -1,13 +1,10 @@
 'use client';
 
-"use client";
-
 import { useState } from "react";
 import { ArrowRightIcon, CheckIcon } from "@/components/icons/CyberIcons";
-import { useContent } from "@/lib/content-client";
 
-export default function Newsletter() {
-  const content = useContent() as Record<string, any>;
+export default function Newsletter({ data }: { data: Record<string, unknown> }) {
+  const newsletter = data as Record<string, string>;
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
@@ -18,7 +15,7 @@ export default function Newsletter() {
     e.preventDefault();
     if (!/^\S+@\S+\.\S+$/.test(email)) {
       setStatus("error");
-      setMessage(content.home.newsletter.invalidEmail);
+      setMessage(newsletter.invalidEmail);
       return;
     }
     setStatus("loading");
@@ -26,7 +23,7 @@ export default function Newsletter() {
     await new Promise((r) => setTimeout(r, 700));
     setStatus("success");
     setMessage(
-      content.home.newsletter.successMessage
+      newsletter.successMessage
     );
     setEmail("");
   };
@@ -40,17 +37,17 @@ export default function Newsletter() {
         <div className="gradient-border-soft mx-auto max-w-4xl rounded-3xl bg-surface-100/80 p-8 sm:p-12">
           <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-7">
-              <span className="chip">{content.home.newsletter.chip}</span>
+              <span className="chip">{newsletter.chip}</span>
               <h2
                 id="newsletter-heading"
                 className="reveal mt-4 font-display text-2xl font-bold tracking-tight sm:text-3xl"
               >
-                {content.home.newsletter.headingPrefix}{" "}
-                <span className="gradient-text">{content.home.newsletter.headingHighlight}</span>
-                {content.home.newsletter.headingSuffix}
+                {newsletter.headingPrefix}{" "}
+                <span className="gradient-text">{newsletter.headingHighlight}</span>
+                {newsletter.headingSuffix}
               </h2>
               <p className="reveal mt-3 text-sm text-slate-600 sm:text-base">
-                {content.home.newsletter.description}
+                {newsletter.description}
               </p>
             </div>
             <form
@@ -60,7 +57,7 @@ export default function Newsletter() {
               aria-describedby="newsletter-status"
             >
               <label htmlFor="newsletter-email" className="sr-only">
-                {content.home.newsletter.emailLabel}
+                {newsletter.emailLabel}
               </label>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <input
@@ -71,7 +68,7 @@ export default function Newsletter() {
                   inputMode="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder={content.home.newsletter.emailPlaceholder}
+                  placeholder={newsletter.emailPlaceholder}
                   className="w-full rounded-full border border-ink-900/10 bg-ink-900/[0.04] px-5 py-3 text-sm text-ink-900 placeholder:text-slate-500 focus:border-brand-cyan/60 focus:outline-none"
                 />
                 <button
@@ -80,8 +77,8 @@ export default function Newsletter() {
                   className="btn-primary shrink-0"
                 >
                   {status === "loading"
-                    ? content.home.newsletter.subscribing
-                    : content.home.newsletter.subscribe}
+                    ? newsletter.subscribing
+                    : newsletter.subscribe}
                   {status !== "loading" && (
                     <ArrowRightIcon className="h-4 w-4" />
                   )}
@@ -104,7 +101,7 @@ export default function Newsletter() {
                 )}
                 {status === "idle" && (
                   <span className="text-slate-500">
-                    {content.home.newsletter.privacyNotice}
+                    {newsletter.privacyNotice}
                   </span>
                 )}
               </div>

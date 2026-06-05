@@ -5,15 +5,27 @@ import CyberBackground from "@/components/visual/CyberBackground";
 import Particles from "@/components/visual/Particles";
 import GlowButton from "@/components/ui/GlowButton";
 import DashboardIllustration from "@/components/visual/DashboardIllustration";
-import { useContent } from "@/lib/content-client";
 import {
   ArrowRightIcon,
   PlayIcon,
   ShieldIcon,
 } from "@/components/icons/CyberIcons";
 
-export default function Hero() {
-  const content = useContent() as Record<string, any>;
+type HeroStat = { label: string; value: string };
+
+type HeroData = {
+  chip: string;
+  titlePrefix: string;
+  titleHighlight: string;
+  description: string;
+  primaryCta: string;
+  secondaryCta: string;
+  stats: HeroStat[];
+  scrollHint: string;
+};
+
+export default function Hero({ data }: { data: Record<string, unknown> }) {
+  const hero = data as HeroData;
   return (
     <section
       aria-labelledby="hero-heading"
@@ -27,55 +39,55 @@ export default function Hero() {
           <div className="lg:col-span-7">
             <span className="chip reveal">
               <ShieldIcon className="h-3.5 w-3.5 text-brand-cyan" />
-              {content.home.hero.chip}
+              {hero.chip}
             </span>
 
             <h1
               id="hero-heading"
               className="reveal mt-6 font-display text-display-2xl font-bold tracking-tight text-balance"
             >
-              {content.home.hero.titlePrefix}{" "}
-              <span className="gradient-text">{content.home.hero.titleHighlight}</span>
+              {hero.titlePrefix}{" "}
+              <span className="gradient-text">{hero.titleHighlight}</span>
             </h1>
 
             <p className="reveal mt-6 max-w-2xl text-lg leading-relaxed text-slate-700 sm:text-xl">
-              {content.home.hero.description}
+              {hero.description}
             </p>
 
             <div className="reveal mt-9 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4">
               <GlowButton href="/contact">
-                {content.home.hero.primaryCta}
+                {hero.primaryCta}
                 <ArrowRightIcon className="h-4 w-4" />
               </GlowButton>
               <GlowButton href="/case-studies" variant="ghost">
                 <PlayIcon className="h-4 w-4 text-brand-cyan" />
-                {content.home.hero.secondaryCta}
+                {hero.secondaryCta}
               </GlowButton>
             </div>
 
             <dl className="reveal mt-12 grid max-w-xl grid-cols-3 gap-6 border-t border-ink-900/10 pt-8">
               <div>
                 <dt className="text-xs uppercase tracking-[0.18em] text-slate-600">
-                  {content.home.hero.stats[0].label}
+                  {hero.stats[0].label}
                 </dt>
                 <dd className="mt-1 font-display text-2xl font-bold text-ink-900">
-                  {content.home.hero.stats[0].value}
+                  {hero.stats[0].value}
                 </dd>
               </div>
               <div>
                 <dt className="text-xs uppercase tracking-[0.18em] text-slate-600">
-                  {content.home.hero.stats[1].label}
+                  {hero.stats[1].label}
                 </dt>
                 <dd className="mt-1 font-display text-2xl font-bold text-ink-900">
-                  {content.home.hero.stats[1].value}
+                  {hero.stats[1].value}
                 </dd>
               </div>
               <div>
                 <dt className="text-xs uppercase tracking-[0.18em] text-slate-600">
-                  {content.home.hero.stats[2].label}
+                  {hero.stats[2].label}
                 </dt>
                 <dd className="mt-1 font-display text-2xl font-bold text-ink-900">
-                  {content.home.hero.stats[2].value}
+                  {hero.stats[2].value}
                 </dd>
               </div>
             </dl>
@@ -99,7 +111,7 @@ export default function Hero() {
           href="#trusted"
           className="group inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-slate-600 transition-colors hover:text-brand-cyan"
         >
-          {content.home.hero.scrollHint}
+          {hero.scrollHint}
           <span className="inline-block h-8 w-px bg-gradient-to-b from-slate-400/80 to-transparent group-hover:from-cyan-300" />
         </Link>
       </div>

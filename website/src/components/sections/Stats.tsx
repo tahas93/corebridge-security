@@ -1,11 +1,7 @@
 import StatCounter from "@/components/ui/StatCounter";
 import { getStats } from "@/lib/data";
-import { getCmsPath } from "@/lib/cms-path";
-import { getSiteContent } from "@/lib/cms-loader";
-
-export default async function Stats() {
-  const content = await getSiteContent();
-  const heading = getCmsPath<string>(content, "home.stats.heading");
+export default async function Stats({ data }: { data: Record<string, unknown> }) {
+  const heading = String(data.heading ?? "");
   const stats = await getStats();
 
   return (

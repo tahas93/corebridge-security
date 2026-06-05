@@ -1,11 +1,8 @@
 import SectionHeading from "@/components/ui/SectionHeading";
-import { getCmsPath } from "@/lib/cms-path";
-import { getSiteContent } from "@/lib/cms-loader";
 import { getPartnerLogos } from "@/lib/data";
 
-export default async function Partners() {
-  const content = await getSiteContent();
-  const copy = getCmsPath<Record<string, string>>(content, "home.partners");
+export default async function Partners({ data }: { data: Record<string, unknown> }) {
+  const copy = data as Record<string, string>;
   const partnerLogos = await getPartnerLogos();
 
   return (

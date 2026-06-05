@@ -3,9 +3,9 @@ import { getSiteContent } from "@/lib/cms-loader";
 import { getTestimonials } from "@/lib/data";
 import TestimonialsCarousel from "./TestimonialsCarousel";
 
-export default async function Testimonials() {
+export default async function Testimonials({ data }: { data: Record<string, unknown> }) {
+  const copy = data as Record<string, string>;
   const content = await getSiteContent();
-  const copy = getCmsPath<Record<string, string>>(content, "home.testimonials");
   const carouselAria = getCmsPath<string>(content, "common.aria.testimonialCarousel");
   const testimonials = await getTestimonials();
 

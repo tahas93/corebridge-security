@@ -16,25 +16,26 @@ type Section = {
 };
 
 async function renderSection(section: Section) {
+  const data = section.data;
   switch (section.type) {
     case 'hero':
-      return <Hero key={section.id} />;
+      return <Hero key={section.id} data={data} />;
     case 'trusted_by':
-      return <TrustedBy key={section.id} />;
+      return <TrustedBy key={section.id} data={data} />;
     case 'stats':
-      return <Stats key={section.id} />;
+      return <Stats key={section.id} data={data} />;
     case 'services_grid':
-      return <ServicesGrid key={section.id} />;
+      return <ServicesGrid key={section.id} data={data} />;
     case 'solutions_showcase':
-      return <SolutionsShowcase key={section.id} />;
+      return <SolutionsShowcase key={section.id} data={data} />;
     case 'testimonials':
-      return <Testimonials key={section.id} />;
+      return <Testimonials key={section.id} data={data} />;
     case 'partners':
-      return <Partners key={section.id} />;
+      return <Partners key={section.id} data={data} />;
     case 'cta_banner':
-      return <CtaBanner key={section.id} />;
+      return <CtaBanner key={section.id} data={data} />;
     case 'newsletter':
-      return <Newsletter key={section.id} />;
+      return <Newsletter key={section.id} data={data} />;
     case 'rich_text':
       return (
         <section key={section.id} className="section">

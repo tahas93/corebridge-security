@@ -1,10 +1,7 @@
-import { getCmsPath } from "@/lib/cms-path";
-import { getSiteContent } from "@/lib/cms-loader";
 import { getTrustedLogos } from "@/lib/data";
 
-export default async function TrustedBy() {
-  const content = await getSiteContent();
-  const heading = getCmsPath<string>(content, "home.trustedBy.heading");
+export default async function TrustedBy({ data }: { data: Record<string, unknown> }) {
+  const heading = String(data.heading ?? "");
   const trustedLogos = await getTrustedLogos();
   const loop = [...trustedLogos, ...trustedLogos];
 

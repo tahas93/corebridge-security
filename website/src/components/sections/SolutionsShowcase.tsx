@@ -1,13 +1,10 @@
 import Link from "next/link";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { ArrowRightIcon } from "@/components/icons/CyberIcons";
-import { getCmsPath } from "@/lib/cms-path";
-import { getSiteContent } from "@/lib/cms-loader";
 import { getSolutions } from "@/lib/data";
 
-export default async function SolutionsShowcase() {
-  const content = await getSiteContent();
-  const copy = getCmsPath<Record<string, string>>(content, "home.solutions");
+export default async function SolutionsShowcase({ data }: { data: Record<string, unknown> }) {
+  const copy = data as Record<string, string>;
   const solutions = await getSolutions();
 
   return (

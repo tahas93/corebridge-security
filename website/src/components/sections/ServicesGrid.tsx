@@ -1,8 +1,6 @@
 import Link from "next/link";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { ArrowRightIcon, CheckIcon } from "@/components/icons/CyberIcons";
-import { getCmsPath } from "@/lib/cms-path";
-import { getSiteContent } from "@/lib/cms-loader";
 import { getServices } from "@/lib/data";
 
 const accentMap = {
@@ -11,9 +9,8 @@ const accentMap = {
   cyan: "from-brand-cyan/30 to-brand-cyan/0 text-brand-cyan",
 } as const;
 
-export default async function ServicesGrid() {
-  const content = await getSiteContent();
-  const copy = getCmsPath<Record<string, string>>(content, "home.services");
+export default async function ServicesGrid({ data }: { data: Record<string, unknown> }) {
+  const copy = data as Record<string, string>;
   const services = await getServices();
 
   return (
