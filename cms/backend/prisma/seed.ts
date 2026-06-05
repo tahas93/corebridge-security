@@ -311,7 +311,7 @@ async function seedPages() {
         { type: 'solutions_showcase', order: 4, data: home.solutions },
         { type: 'testimonials', order: 5, data: home.testimonials },
         { type: 'partners', order: 6, data: home.partners },
-        { type: 'cta_banner', order: 7, data: home.cta },
+        { type: 'cta_banner', order: 7, data: home.ctaBanner ?? {} },
         { type: 'newsletter', order: 8, data: home.newsletter },
       ];
       await prisma.pageSection.createMany({
