@@ -1,0 +1,137 @@
+{
+  "columns": [
+    {
+      "title": "Services",
+      "links": [
+        {
+          "label": "Managed Detection & Response",
+          "href": "/services#mdr"
+        },
+        {
+          "label": "Cloud Security",
+          "href": "/services#cloud"
+        },
+        {
+          "label": "Identity & Access",
+          "href": "/services#identity"
+        },
+        {
+          "label": "Offensive Security",
+          "href": "/services#offensive"
+        },
+        {
+          "label": "Incident Response",
+          "href": "/services#ir"
+        },
+        {
+          "label": "GRC & Advisory",
+          "href": "/services#grc"
+        }
+      ]
+    },
+    {
+      "title": "Solutions",
+      "links": [
+        {
+          "label": "Zero Trust Architecture",
+          "href": "/solutions#zero-trust"
+        },
+        {
+          "label": "SOC Modernization",
+          "href": "/solutions#soc"
+        },
+        {
+          "label": "Data Protection",
+          "href": "/solutions#data"
+        },
+        {
+          "label": "OT / IoT Security",
+          "href": "/solutions#ot"
+        },
+        {
+          "label": "AI & LLM Security",
+          "href": "/solutions#ai"
+        },
+        {
+          "label": "Critical Infrastructure",
+          "href": "/solutions#critical"
+        }
+      ]
+    },
+    {
+      "title": "Company",
+      "links": [
+        {
+          "label": "About",
+          "href": "/about"
+        },
+        {
+          "label": "Case Studies",
+          "href": "/case-studies"
+        },
+        {
+          "label": "Careers",
+          "href": "/about#careers"
+        },
+        {
+          "label": "Newsroom",
+          "href": "/about#news"
+        },
+        {
+          "label": "Partners",
+          "href": "/about#partners"
+        },
+        {
+          "label": "Contact",
+          "href": "/contact"
+        }
+      ]
+    },
+    {
+      "title": "Resources",
+      "links": [
+        {
+          "label": "Threat Intelligence",
+          "href": "#"
+        },
+        {
+          "label": "Research & Blog",
+          "href": "#"
+        },
+        {
+          "label": "Webinars",
+          "href": "#"
+        },
+        {
+          "label": "Whitepapers",
+          "href": "#"
+        },
+        {
+          "label": "Trust Center",
+          "href": "#"
+        },
+        {
+          "label": "Security.txt",
+          "href": "#"
+        }
+      ]
+    }
+  ],
+  "socials": [
+    "LinkedIn",
+    "Twitter",
+    "GitHub",
+    "YouTube"
+  ],
+  "symbols": {
+    "contactSeparator": "·"
+  },
+  "legal": {
+    "allRightsReserved": "All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "cookies": "Cookies",
+    "responsibleDisclosure": "Responsible Disclosure",
+    "compliance": "SOC 2 · ISO 27001 · GDPR Ready"
+  }
+}

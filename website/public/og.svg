@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#001F3F"/>
+      <stop offset="100%" stop-color="#000F1F"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#004B87"/>
+      <stop offset="50%" stop-color="#0079B5"/>
+      <stop offset="100%" stop-color="#0096D6"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="0%" r="60%">
+      <stop offset="0%" stop-color="#0079B5" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#0079B5" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0H0V60" fill="none" stroke="#0096D6" stroke-opacity="0.12" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <g transform="translate(80,180)">
+    <g transform="translate(0,0)">
+      <path d="M60 0 L120 22 V58 C120 88 100 110 60 122 C20 110 0 88 0 58 V22 Z" fill="url(#brand)"/>
+      <path d="M40 60 L55 75 L88 42" fill="none" stroke="#001F3F" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <text x="170" y="60" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="56" fill="#F1FAEE">Sentinel</text>
+    <text x="170" y="110" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="26" fill="#A8C2D4">Enterprise cybersecurity, engineered for trust.</text>
+
+    <g transform="translate(0,180)">
+      <text font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="84" fill="#F1FAEE">
+        <tspan x="0" dy="0">Defend. Detect.</tspan>
+        <tspan x="0" dy="100" fill="url(#brand)">Respond  24/7.</tspan>
+      </text>
+    </g>
+  </g>
+
+  <g transform="translate(80,560)" font-family="Inter, system-ui, sans-serif" font-size="20" fill="#CFE3EF">
+    <text>Zero Trust · MDR · Cloud · Identity · IR · GRC · AI Security</text>
+  </g>
+</svg>

@@ -1,0 +1,36 @@
+{
+  "primary": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "Services",
+      "href": "/services"
+    },
+    {
+      "label": "Solutions",
+      "href": "/solutions"
+    },
+    {
+      "label": "Case Studies",
+      "href": "/case-studies"
+    },
+    {
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  ],
+  "ctas": {
+    "clientPortal": "Client Portal",
+    "bookBriefing": "Book a briefing",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "toggleNav": "Toggle navigation",
+    "sentinelHome": "Sentinel home"
+  }
+}

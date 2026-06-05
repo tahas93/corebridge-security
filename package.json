@@ -1,0 +1,33 @@
+{
+  "name": "corebridge-security-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Monorepo: Cyber Security website + headless CMS",
+  "workspaces": [
+    "website",
+    "cms/backend",
+    "cms/admin",
+    "shared"
+  ],
+  "scripts": {
+    "dev": "concurrently -n website,cms-api,cms-admin -c blue,green,magenta \"npm run dev -w website\" \"npm run dev -w @corebridge/cms-backend\" \"npm run dev -w @corebridge/cms-admin\"",
+    "dev:website": "npm run dev -w website",
+    "dev:cms": "npm run dev -w @corebridge/cms-backend",
+    "dev:admin": "npm run dev -w @corebridge/cms-admin",
+    "build": "npm run build -w @corebridge/shared && npm run build -w @corebridge/cms-backend && npm run build -w @corebridge/cms-admin && npm run build -w website",
+    "db:migrate": "npm run prisma:migrate -w @corebridge/cms-backend",
+    "db:seed": "npm run prisma:seed -w @corebridge/cms-backend",
+    "docker:up": "docker compose -f docker/docker-compose.yml up -d",
+    "docker:down": "docker compose -f docker/docker-compose.yml down"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "overrides": {
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0"
+  }
+}

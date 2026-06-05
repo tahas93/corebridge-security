@@ -1,0 +1,12 @@
+FROM node:20-alpine AS builder
+WORKDIR /app
+COPY package.json package-lock.json* ./
+COPY shared ./shared
+COPY cms/admin ./cms/admin
+RUN npm install -w @corebridge/shared -w @corebridge/cms-admin
+RUN npm run build -w @corebridge/cms-admin
+
+FROM nginx:alpine
+COPY --from=builder /app/cms/admin/dist /usr/share/nginx/html
+COPY docker/nginx-admin.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80

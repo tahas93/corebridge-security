@@ -1,0 +1,45 @@
+export const ROLES = {
+  SUPER_ADMIN: 'SUPER_ADMIN',
+  CONTENT_MANAGER: 'CONTENT_MANAGER',
+  MARKETING_EDITOR: 'MARKETING_EDITOR',
+  VIEWER: 'VIEWER',
+} as const;
+
+export type RoleName = (typeof ROLES)[keyof typeof ROLES];
+
+export const PERMISSIONS = {
+  USERS_MANAGE: 'users:manage',
+  ROLES_MANAGE: 'roles:manage',
+  CONTENT_READ: 'content:read',
+  CONTENT_WRITE: 'content:write',
+  CONTENT_PUBLISH: 'content:publish',
+  PAGES_MANAGE: 'pages:manage',
+  MENUS_MANAGE: 'menus:manage',
+  MEDIA_MANAGE: 'media:manage',
+  SETTINGS_MANAGE: 'settings:manage',
+  BLOGS_MANAGE: 'blogs:manage',
+  AUDIT_READ: 'audit:read',
+} as const;
+
+export type PermissionKey = (typeof PERMISSIONS)[keyof typeof PERMISSIONS];
+
+export const ROLE_PERMISSIONS: Record<RoleName, PermissionKey[]> = {
+  SUPER_ADMIN: Object.values(PERMISSIONS),
+  CONTENT_MANAGER: [
+    PERMISSIONS.CONTENT_READ,
+    PERMISSIONS.CONTENT_WRITE,
+    PERMISSIONS.CONTENT_PUBLISH,
+    PERMISSIONS.PAGES_MANAGE,
+    PERMISSIONS.MENUS_MANAGE,
+    PERMISSIONS.MEDIA_MANAGE,
+  ],
+  MARKETING_EDITOR: [
+    PERMISSIONS.CONTENT_READ,
+    PERMISSIONS.CONTENT_WRITE,
+    PERMISSIONS.CONTENT_PUBLISH,
+    PERMISSIONS.BLOGS_MANAGE,
+    PERMISSIONS.PAGES_MANAGE,
+    PERMISSIONS.MEDIA_MANAGE,
+  ],
+  VIEWER: [PERMISSIONS.CONTENT_READ, PERMISSIONS.AUDIT_READ],
+};

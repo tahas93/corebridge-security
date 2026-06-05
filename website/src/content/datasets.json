@@ -1,0 +1,431 @@
+{
+  "services": [
+    {
+      "id": "mdr",
+      "icon": "RadarIcon",
+      "accent": "cyan",
+      "title": "Managed Detection & Response",
+      "description": "24/7 follow-the-sun SOC powered by behavioral analytics and battle-tested runbooks. Mean-time-to-detect under 5 minutes.",
+      "bullets": [
+        "Threat hunting & investigation",
+        "EDR / XDR / SIEM coverage",
+        "Tier-2 escalation included"
+      ]
+    },
+    {
+      "id": "cloud",
+      "icon": "CloudIcon",
+      "accent": "blue",
+      "title": "Cloud & Container Security",
+      "description": "Harden your AWS, Azure, GCP and Kubernetes estate with CSPM, CWPP, IaC scanning and runtime protection.",
+      "bullets": [
+        "Multi-cloud posture management",
+        "Kubernetes admission control",
+        "Terraform & IaC guardrails"
+      ]
+    },
+    {
+      "id": "identity",
+      "icon": "FingerprintIcon",
+      "accent": "purple",
+      "title": "Identity & Access",
+      "description": "Modernize IAM, PAM and ITDR. Eliminate standing privilege and shut down identity-based attack paths.",
+      "bullets": [
+        "Passwordless & MFA rollout",
+        "Just-in-time privileged access",
+        "Identity threat detection"
+      ]
+    },
+    {
+      "id": "offensive",
+      "icon": "BugIcon",
+      "accent": "cyan",
+      "title": "Offensive Security",
+      "description": "Red team, adversary emulation and continuous penetration testing aligned to MITRE ATT&CK techniques.",
+      "bullets": [
+        "Continuous attack surface testing",
+        "Purple team exercises",
+        "Cloud, web, mobile, AppSec"
+      ]
+    },
+    {
+      "id": "ir",
+      "icon": "AlertIcon",
+      "accent": "purple",
+      "title": "Incident Response",
+      "description": "Containment in hours, not weeks. Retainer-backed digital forensics and breach response on standby.",
+      "bullets": [
+        "1-hour SLA breach hotline",
+        "Forensics & litigation support",
+        "Ransomware negotiation"
+      ]
+    },
+    {
+      "id": "grc",
+      "icon": "ShieldIcon",
+      "accent": "blue",
+      "title": "GRC & Advisory",
+      "description": "Risk, compliance and board-level advisory across SOC 2, ISO 27001, PCI, HIPAA, NIS2 and the EU AI Act.",
+      "bullets": [
+        "Virtual CISO & program design",
+        "Audit readiness in 90 days",
+        "Third-party risk management"
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "id": "zero-trust",
+      "icon": "ZeroTrustIcon",
+      "title": "Zero Trust Architecture",
+      "tagline": "Never trust. Always verify. Continuously.",
+      "description": "Design and deploy a zero trust framework spanning identity, device, network, application and data — without slowing down your business.",
+      "outcomes": [
+        "Eliminate implicit network trust",
+        "Microsegmentation at scale",
+        "Continuous risk-based access"
+      ]
+    },
+    {
+      "id": "soc",
+      "icon": "EyeScanIcon",
+      "title": "SOC Modernization",
+      "tagline": "From alert factory to mission-driven operations.",
+      "description": "Re-architect your security operations with AI-assisted triage, automation, and a measurable threat-informed defense strategy.",
+      "outcomes": [
+        "70% reduction in noisy alerts",
+        "Detection-as-code pipelines",
+        "MITRE ATT&CK heatmap coverage"
+      ]
+    },
+    {
+      "id": "data",
+      "icon": "LockIcon",
+      "title": "Data Protection & DLP",
+      "tagline": "Govern, classify and defend your most valuable asset.",
+      "description": "End-to-end data security combining classification, encryption, DLP and insider risk — designed for hybrid and SaaS environments.",
+      "outcomes": [
+        "Automated data discovery",
+        "Insider risk analytics",
+        "Privacy by design"
+      ]
+    },
+    {
+      "id": "ot",
+      "icon": "ChipIcon",
+      "title": "OT, IoT & Critical Infrastructure",
+      "tagline": "Bridge the IT/OT divide. Protect what matters.",
+      "description": "Specialized programs for manufacturing, energy, transportation and healthcare — passive monitoring, segmentation and asset visibility.",
+      "outcomes": [
+        "Passive ICS asset discovery",
+        "IEC 62443 alignment",
+        "Safety-first incident response"
+      ]
+    },
+    {
+      "id": "ai",
+      "icon": "AiBrainIcon",
+      "title": "AI & LLM Security",
+      "tagline": "Adopt AI with confidence and control.",
+      "description": "Secure your AI lifecycle — model risk, prompt injection, data leakage, supply chain — aligned to NIST AI RMF and the EU AI Act.",
+      "outcomes": [
+        "LLM red teaming",
+        "AI bill of materials (AI-BOM)",
+        "Guardrails and policy enforcement"
+      ]
+    },
+    {
+      "id": "critical",
+      "icon": "CodeShieldIcon",
+      "title": "Application & Product Security",
+      "tagline": "Secure software at the speed of DevOps.",
+      "description": "Shift left and shield right with SAST, SCA, ASPM, threat modeling and developer enablement built into your SDLC.",
+      "outcomes": [
+        "DevSecOps maturity uplift",
+        "Software supply chain integrity",
+        "Champions program at scale"
+      ]
+    }
+  ],
+  "stats": [
+    {
+      "value": 4.2,
+      "suffix": "B+",
+      "prefix": "$",
+      "decimals": 1,
+      "label": "Assets defended",
+      "description": "Across regulated industries worldwide"
+    },
+    {
+      "value": 1800,
+      "suffix": "+",
+      "label": "Enterprise clients",
+      "description": "From Fortune 500 to high-growth scaleups"
+    },
+    {
+      "value": 99.99,
+      "suffix": "%",
+      "decimals": 2,
+      "label": "SOC uptime",
+      "description": "Follow-the-sun, multi-region operations"
+    },
+    {
+      "value": 5,
+      "suffix": " min",
+      "label": "Mean-time-to-detect",
+      "description": "Across managed detection engagements"
+    }
+  ],
+  "trustedLogos": [
+    {
+      "name": "Northwind",
+      "mark": "NORTHWIND"
+    },
+    {
+      "name": "Helix Bank",
+      "mark": "HELIX·BANK"
+    },
+    {
+      "name": "Voltaire Energy",
+      "mark": "VOLTAIRE"
+    },
+    {
+      "name": "Lumen Health",
+      "mark": "LUMEN HEALTH"
+    },
+    {
+      "name": "Aether Aero",
+      "mark": "AETHER"
+    },
+    {
+      "name": "Pioneer Logistics",
+      "mark": "PIONEER"
+    },
+    {
+      "name": "Quantis Telecom",
+      "mark": "QUANTIS"
+    },
+    {
+      "name": "Solace Retail",
+      "mark": "SOLACE"
+    }
+  ],
+  "partnerLogos": [
+    {
+      "name": "CrowdStrike",
+      "mark": "CrowdStrike"
+    },
+    {
+      "name": "Palo Alto Networks",
+      "mark": "Palo Alto"
+    },
+    {
+      "name": "Microsoft Security",
+      "mark": "Microsoft"
+    },
+    {
+      "name": "Okta",
+      "mark": "Okta"
+    },
+    {
+      "name": "Wiz",
+      "mark": "Wiz"
+    },
+    {
+      "name": "Splunk",
+      "mark": "Splunk"
+    },
+    {
+      "name": "Zscaler",
+      "mark": "Zscaler"
+    },
+    {
+      "name": "SentinelOne",
+      "mark": "SentinelOne"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Sentinel rebuilt our global SOC in under six months. We retired three legacy tools, cut alert noise by 74% and finally have a defensible posture our board can understand.",
+      "name": "Maya Okonkwo",
+      "role": "Chief Information Security Officer",
+      "company": "Helix Bank"
+    },
+    {
+      "quote": "Their incident response team contained a ransomware operator inside our environment in under four hours. The clarity and discipline they brought during a crisis was extraordinary.",
+      "name": "David Reinhart",
+      "role": "VP, Cyber Defense",
+      "company": "Voltaire Energy"
+    },
+    {
+      "quote": "We needed a partner who could speak DevSecOps, cloud and the boardroom. Sentinel is the only firm we trust to do all three credibly.",
+      "name": "Priya Raman",
+      "role": "SVP Engineering",
+      "company": "Quantis Telecom"
+    },
+    {
+      "quote": "From zero trust strategy to AI governance, Sentinel's advisors are easily the most pragmatic and technically deep we have ever worked with.",
+      "name": "Jonas Lindqvist",
+      "role": "Head of Global Security",
+      "company": "Aether Aero"
+    }
+  ],
+  "caseStudies": [
+    {
+      "slug": "global-bank-zero-trust",
+      "industry": "Financial Services",
+      "title": "A global bank rolled out Zero Trust to 140,000 employees in 18 months",
+      "excerpt": "Sentinel designed and operationalized a zero trust program spanning identity, device posture and network microsegmentation across 62 countries.",
+      "metrics": [
+        {
+          "label": "Reduction in lateral movement risk",
+          "value": "92%"
+        },
+        {
+          "label": "Privileged accounts retired",
+          "value": "38k"
+        },
+        {
+          "label": "Compliance frameworks aligned",
+          "value": "7"
+        }
+      ],
+      "tags": [
+        "Zero Trust",
+        "Identity",
+        "Banking"
+      ],
+      "accent": "blue"
+    },
+    {
+      "slug": "energy-soc-modernization",
+      "industry": "Energy & Utilities",
+      "title": "Modernizing the SOC of a North American energy provider",
+      "excerpt": "A unified XDR and detection-as-code pipeline replaced three legacy SIEMs, cutting alert volume by 74% and bringing MTTR under 18 minutes.",
+      "metrics": [
+        {
+          "label": "Alert noise reduction",
+          "value": "74%"
+        },
+        {
+          "label": "MTTR for critical incidents",
+          "value": "18 min"
+        },
+        {
+          "label": "MITRE ATT&CK coverage",
+          "value": "91%"
+        }
+      ],
+      "tags": [
+        "MDR",
+        "Detection Engineering",
+        "Energy"
+      ],
+      "accent": "cyan"
+    },
+    {
+      "slug": "healthcare-cloud-security",
+      "industry": "Healthcare",
+      "title": "Cloud security for a Fortune 100 healthcare provider",
+      "excerpt": "A multi-cloud security mesh across AWS, Azure and 9,000 Kubernetes workloads — protecting PHI for 40M patients without slowing engineering.",
+      "metrics": [
+        {
+          "label": "Cloud workloads protected",
+          "value": "9,000+"
+        },
+        {
+          "label": "Mean fix time for critical CVEs",
+          "value": "<24h"
+        },
+        {
+          "label": "HIPAA controls automated",
+          "value": "100%"
+        }
+      ],
+      "tags": [
+        "Cloud",
+        "Kubernetes",
+        "Healthcare"
+      ],
+      "accent": "purple"
+    },
+    {
+      "slug": "manufacturer-ot-security",
+      "industry": "Manufacturing",
+      "title": "Securing 47 plants with passive OT visibility and segmentation",
+      "excerpt": "Deployed passive monitoring across 47 manufacturing sites and segmented IT/OT without a single minute of unplanned production downtime.",
+      "metrics": [
+        {
+          "label": "Plants secured",
+          "value": "47"
+        },
+        {
+          "label": "OT assets inventoried",
+          "value": "120k"
+        },
+        {
+          "label": "Unplanned downtime caused",
+          "value": "0 min"
+        }
+      ],
+      "tags": [
+        "OT",
+        "ICS",
+        "Manufacturing"
+      ],
+      "accent": "blue"
+    },
+    {
+      "slug": "ai-governance-platform",
+      "industry": "Technology",
+      "title": "AI governance and red teaming for a leading SaaS platform",
+      "excerpt": "Built an AI security program covering model risk, prompt injection, data leakage and supply chain — aligned to NIST AI RMF and the EU AI Act.",
+      "metrics": [
+        {
+          "label": "LLM red team findings remediated",
+          "value": "100%"
+        },
+        {
+          "label": "AI features secured",
+          "value": "26"
+        },
+        {
+          "label": "Time to EU AI Act readiness",
+          "value": "6 months"
+        }
+      ],
+      "tags": [
+        "AI",
+        "LLM",
+        "Governance"
+      ],
+      "accent": "purple"
+    },
+    {
+      "slug": "retail-incident-response",
+      "industry": "Retail",
+      "title": "Ransomware contained in 4 hours for a global retailer",
+      "excerpt": "Sentinel's IR retainer activated within 9 minutes, contained the attacker in 4 hours and restored operations across 1,200 stores in under 48 hours.",
+      "metrics": [
+        {
+          "label": "Time to contain",
+          "value": "4h"
+        },
+        {
+          "label": "Stores back online",
+          "value": "1,200"
+        },
+        {
+          "label": "Estimated loss avoided",
+          "value": "$180M"
+        }
+      ],
+      "tags": [
+        "Incident Response",
+        "Ransomware",
+        "Retail"
+      ],
+      "accent": "cyan"
+    }
+  ]
+}

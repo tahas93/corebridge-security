@@ -1,0 +1,37 @@
+{
+  "contact": {
+    "heading": "Tell us about your engagement",
+    "intro": "All fields are confidential and used only to scope your inquiry.",
+    "fields": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Work email",
+      "company": "Company",
+      "title": "Job title",
+      "phone": "Phone"
+    },
+    "areasLegend": "Areas of interest",
+    "areasHelp": "Select all that apply.",
+    "areasOptions": [
+      "Managed Detection & Response",
+      "Cloud & Container Security",
+      "Identity & Access",
+      "Offensive Security",
+      "Incident Response",
+      "GRC & Advisory",
+      "AI / LLM Security",
+      "Other"
+    ],
+    "messageLabel": "How can we help?",
+    "messagePlaceholder": "Briefly describe your security goals or the incident you're facing.",
+    "consentPrefix": "I agree to Sentinel processing this inquiry per the",
+    "consentLink": "privacy notice",
+    "sending": "Sending…",
+    "send": "Send message",
+    "success": "Thanks — a senior practitioner will reach out within one business hour.",
+    "idle": "Response within one business hour. 24/7 incident hotline."
+  },
+  "symbols": {
+    "required": "*"
+  }
+}

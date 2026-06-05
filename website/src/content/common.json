@@ -1,0 +1,53 @@
+{
+  "common": {
+    "brandName": "Sentinel",
+    "language": "en",
+    "skipToContent": "Skip to content",
+    "homeLabel": "Home",
+    "aria": {
+      "primaryNav": "Primary",
+      "breadcrumb": "Breadcrumb",
+      "testimonialCarousel": "Client testimonials"
+    },
+    "loading": {
+      "pageLoader": "Initializing secure session"
+    },
+    "status": {
+      "live": "LIVE"
+    }
+  },
+  "site": {
+    "tagline": "Enterprise Cybersecurity, Engineered for Trust",
+    "description": "Sentinel is a cybersecurity consulting and managed services firm helping global enterprises modernize their security posture with zero trust, cloud security, identity, and 24/7 managed detection & response.",
+    "url": "https://sentinel.example.com",
+    "email": "contact@sentinel.example.com",
+    "phone": "+1 (555) 010-2024",
+    "address": "200 Crescent Court, Suite 1400, Dallas, TX 75201",
+    "social": {
+      "linkedin": "https://www.linkedin.com",
+      "twitter": "https://twitter.com",
+      "github": "https://github.com",
+      "youtube": "https://youtube.com"
+    },
+    "seo": {
+      "keywords": [
+        "cybersecurity",
+        "enterprise security",
+        "managed detection and response",
+        "MDR",
+        "XDR",
+        "zero trust",
+        "cloud security",
+        "identity security",
+        "SOC as a service",
+        "threat intelligence",
+        "incident response"
+      ],
+      "category": "technology",
+      "ogImageAlt": "Sentinel — enterprise cybersecurity",
+      "localeCountry": "US",
+      "themeColor": "#F6FBFA",
+      "colorScheme": "light"
+    }
+  }
+}

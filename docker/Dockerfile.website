@@ -1,0 +1,15 @@
+FROM node:20-alpine AS builder
+WORKDIR /app
+COPY package.json package-lock.json* ./
+COPY website ./website
+RUN npm install -w website
+RUN npm run build -w website
+
+FROM node:20-alpine
+WORKDIR /app
+ENV NODE_ENV=production
+COPY --from=builder /app/website/.next/standalone ./
+COPY --from=builder /app/website/.next/static ./.next/static
+COPY --from=builder /app/website/public ./public
+EXPOSE 3000
+CMD ["node", "server.js"]

@@ -1,0 +1,21 @@
+FROM node:20-alpine AS builder
+WORKDIR /app
+COPY package.json package-lock.json* ./
+COPY shared ./shared
+COPY cms/backend ./cms/backend
+RUN npm install -w @corebridge/shared -w @corebridge/cms-backend
+RUN npm run build -w @corebridge/shared
+RUN npm run prisma:generate -w @corebridge/cms-backend
+RUN npm run build -w @corebridge/cms-backend
+
+FROM node:20-alpine
+WORKDIR /app
+ENV NODE_ENV=production
+COPY --from=builder /app/cms/backend/dist ./dist
+COPY --from=builder /app/cms/backend/node_modules ./node_modules
+COPY --from=builder /app/cms/backend/package.json ./
+COPY --from=builder /app/cms/backend/prisma ./prisma
+COPY --from=builder /app/node_modules/@prisma ./node_modules/@prisma
+RUN mkdir -p uploads
+EXPOSE 4000
+CMD ["sh", "-c", "npx prisma migrate deploy && node dist/main.js"]

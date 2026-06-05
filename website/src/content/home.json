@@ -1,0 +1,137 @@
+{
+  "hero": {
+    "chip": "Trusted by 1,800+ enterprises worldwide",
+    "titlePrefix": "Enterprise cybersecurity,",
+    "titleHighlight": "engineered for trust.",
+    "description": "Sentinel is the consulting and managed services partner global enterprises rely on to modernize their security posture — from zero trust and cloud security to 24/7 detection and response.",
+    "primaryCta": "Book a security briefing",
+    "secondaryCta": "See client outcomes",
+    "stats": [
+      {
+        "label": "SOC uptime",
+        "value": "99.99%"
+      },
+      {
+        "label": "MTTD",
+        "value": "< 5 min"
+      },
+      {
+        "label": "Coverage",
+        "value": "62 countries"
+      }
+    ],
+    "scrollHint": "Scroll"
+  },
+  "trustedBy": {
+    "heading": "Trusted by global enterprises across regulated industries"
+  },
+  "stats": {
+    "heading": "Security operations by the numbers"
+  },
+  "services": {
+    "eyebrow": "What we do",
+    "titlePrefix": "An end-to-end",
+    "titleHighlight": "security program",
+    "titleSuffix": ", delivered as one.",
+    "description": "From advisory and architecture to 24/7 operations — Sentinel covers the full lifecycle so your team can focus on what matters.",
+    "serviceLabel": "Service",
+    "linkLabel": "Explore service"
+  },
+  "solutions": {
+    "eyebrow": "Solutions",
+    "titlePrefix": "Outcomes that",
+    "titleHighlight": "de-risk the business",
+    "titleSuffix": ".",
+    "description": "We design and deliver flagship cybersecurity programs spanning the entire enterprise — from zero trust to AI governance.",
+    "linkLabel": "Read more"
+  },
+  "testimonials": {
+    "eyebrow": "Client stories",
+    "titlePrefix": "Security leaders",
+    "titleHighlight": "trust Sentinel",
+    "titleSuffix": "with their hardest problems.",
+    "previousAria": "Previous testimonial",
+    "nextAria": "Next testimonial",
+    "dotAriaPrefix": "Show testimonial"
+  },
+  "partners": {
+    "eyebrow": "Technology alliances",
+    "titlePrefix": "Best-of-breed partners.",
+    "titleHighlight": "One accountable team.",
+    "description": "We are vendor-objective and deeply certified across the platforms enterprises actually use to defend themselves."
+  },
+  "ctaBanner": {
+    "chip": "Ready when you are",
+    "headingPrefix": "Bring your hardest cybersecurity problem.",
+    "headingHighlight": "We'll bring the playbook.",
+    "description": "Whether you're modernizing your SOC, deploying zero trust or responding to an active incident, our experts are one call away.",
+    "primaryCta": "Talk to an expert",
+    "secondaryCta": "Browse case studies",
+    "helper": "Response within one business hour · 24/7 incident hotline"
+  },
+  "newsletter": {
+    "chip": "Sentinel Threat Briefing",
+    "headingPrefix": "The threat intel brief enterprise security teams actually",
+    "headingHighlight": "read",
+    "headingSuffix": ".",
+    "description": "Bi-weekly. Signal over noise. No vendor pitches — ever.",
+    "emailLabel": "Work email",
+    "emailPlaceholder": "you@company.com",
+    "subscribe": "Subscribe",
+    "subscribing": "Subscribing…",
+    "privacyNotice": "By subscribing you agree to our privacy policy.",
+    "invalidEmail": "Please enter a valid email address.",
+    "successMessage": "You're in. Watch your inbox for the next Sentinel Threat Briefing."
+  },
+  "dashboard": {
+    "windowTitle": "sentinel://soc/operations",
+    "liveStatus": "LIVE",
+    "cards": [
+      {
+        "label": "Active threats",
+        "value": "3",
+        "sub": "−2 vs. last hour"
+      },
+      {
+        "label": "Endpoints",
+        "value": "48,210",
+        "sub": "100% protected"
+      },
+      {
+        "label": "Posture score",
+        "value": "A+",
+        "sub": "+6 this week"
+      }
+    ],
+    "chart": {
+      "heading": "Global threat activity",
+      "period": "last 24h"
+    },
+    "feed": [
+      {
+        "level": "critical",
+        "time": "00:42:11",
+        "text": "Brute force on okta-prod-1 — auto-contained"
+      },
+      {
+        "level": "warning",
+        "time": "00:38:54",
+        "text": "New IAM role with admin scope created in aws-us-east-1"
+      },
+      {
+        "level": "info",
+        "time": "00:31:02",
+        "text": "Detection rule cloud-priv-esc-v3 deployed"
+      }
+    ],
+    "feedLevels": {
+      "critical": "critical",
+      "warning": "warning",
+      "info": "info"
+    },
+    "floatingCard": {
+      "eyebrow": "Posture",
+      "value": "Zero Trust · 92%"
+    }
+  }
+}

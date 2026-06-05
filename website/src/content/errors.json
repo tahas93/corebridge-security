@@ -1,0 +1,11 @@
+{
+  "notFound": {
+    "eyebrow": "Error · 404",
+    "titlePrefix": "This page",
+    "titleHighlight": "went dark",
+    "titleSuffix": ".",
+    "description": "The page you're looking for either moved, expired, or was never authorized in the first place. Let's get you back to safety.",
+    "backHome": "Back to home",
+    "contactSupport": "Contact support"
+  }
+}

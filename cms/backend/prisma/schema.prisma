@@ -1,0 +1,361 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum PageStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum ContentStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum AuditAction {
+  LOGIN
+  LOGOUT
+  CONTENT_UPDATE
+  PAGE_CREATE
+  PAGE_UPDATE
+  PAGE_DELETE
+  PAGE_PUBLISH
+  PAGE_UNPUBLISH
+  REVISION_RESTORE
+  USER_CREATE
+  USER_UPDATE
+  USER_DELETE
+  PERMISSION_CHANGE
+  MEDIA_UPLOAD
+  MEDIA_DELETE
+  SETTINGS_UPDATE
+  MENU_UPDATE
+}
+
+model User {
+  id            String         @id @default(uuid())
+  email         String         @unique
+  passwordHash  String
+  name          String
+  isActive      Boolean        @default(true)
+  mfaEnabled    Boolean        @default(false)
+  mfaSecret     String?
+  lastLoginAt   DateTime?
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  roles         UserRole[]
+  refreshTokens RefreshToken[]
+  auditLogs     AuditLog[]
+  pages         Page[]         @relation("PageAuthor")
+  revisions     PageRevision[]
+}
+
+model Role {
+  id          String           @id @default(uuid())
+  name        String           @unique
+  description String?
+  users       UserRole[]
+  permissions RolePermission[]
+}
+
+model Permission {
+  id          String           @id @default(uuid())
+  key         String           @unique
+  description String?
+  roles       RolePermission[]
+}
+
+model UserRole {
+  userId String
+  roleId String
+  user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role   Role @relation(fields: [roleId], references: [id], onDelete: Cascade)
+
+  @@id([userId, roleId])
+}
+
+model RolePermission {
+  roleId       String
+  permissionId String
+  role         Role       @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permission   Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
+  @@id([roleId, permissionId])
+}
+
+model RefreshToken {
+  id        String   @id @default(uuid())
+  tokenHash String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  revoked   Boolean  @default(false)
+}
+
+model AuditLog {
+  id         String      @id @default(uuid())
+  action     AuditAction
+  entityType String?
+  entityId   String?
+  metadata   Json?
+  ipAddress  String?
+  userAgent  String?
+  userId     String?
+  user       User?       @relation(fields: [userId], references: [id], onDelete: SetNull)
+  createdAt  DateTime    @default(now())
+
+  @@index([action, createdAt])
+  @@index([userId])
+}
+
+model SiteSettings {
+  id                  String   @id @default("default")
+  companyName         String
+  tagline             String
+  description         String   @db.Text
+  url                 String
+  email               String
+  phone               String
+  address             String
+  supportEmail        String?
+  salesEmail          String?
+  social              Json
+  announcementBar     String?
+  securityAlertBanner String?
+  logoUrl             String?
+  footerCopyright     String?
+  certifications      Json?
+  complianceBadges    Json?
+  seo                 Json?
+  updatedAt           DateTime @updatedAt
+}
+
+model ContentEntry {
+  id        String   @id @default(uuid())
+  key       String   @unique
+  value     Json
+  updatedAt DateTime @updatedAt
+}
+
+model Page {
+  id             String         @id @default(uuid())
+  name           String
+  slug           String         @unique
+  status         PageStatus     @default(DRAFT)
+  category       String
+  authorId       String?
+  author         User?          @relation("PageAuthor", fields: [authorId], references: [id], onDelete: SetNull)
+  featuredImage  String?
+  publishDate    DateTime?
+  seoTitle       String
+  seoDescription String         @db.Text
+  seoKeywords    String[]
+  canonicalUrl   String?
+  ogTitle        String?
+  ogDescription  String?        @db.Text
+  ogImage        String?
+  twitterTitle   String?
+  twitterDescription String?    @db.Text
+  twitterImage   String?
+  structuredData Json?
+  sections       PageSection[]
+  revisions      PageRevision[]
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  publishedAt    DateTime?
+
+  @@index([status, slug])
+  @@index([category])
+}
+
+model PageSection {
+  id                 String            @id @default(uuid())
+  pageId             String
+  page               Page              @relation(fields: [pageId], references: [id], onDelete: Cascade)
+  type               String
+  order              Int
+  data               Json
+  reusableSectionId  String?
+  reusableSection    ReusableSection?  @relation(fields: [reusableSectionId], references: [id], onDelete: SetNull)
+
+  @@index([pageId, order])
+}
+
+model PageRevision {
+  id            String   @id @default(uuid())
+  pageId        String
+  page          Page     @relation(fields: [pageId], references: [id], onDelete: Cascade)
+  version       Int
+  changeSummary String?
+  sections      Json
+  seoSnapshot   Json
+  createdById   String?
+  createdBy     User?    @relation(fields: [createdById], references: [id], onDelete: SetNull)
+  createdAt     DateTime @default(now())
+
+  @@unique([pageId, version])
+}
+
+model ReusableSection {
+  id        String        @id @default(uuid())
+  name      String
+  type      String
+  data      Json
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+  usages    PageSection[]
+}
+
+model Menu {
+  id        String     @id @default(uuid())
+  key       String     @unique
+  name      String
+  items     MenuItem[]
+  updatedAt DateTime   @updatedAt
+}
+
+model MenuItem {
+  id          String     @id @default(uuid())
+  menuId      String
+  menu        Menu       @relation(fields: [menuId], references: [id], onDelete: Cascade)
+  label       String
+  href        String
+  description String?
+  parentId    String?
+  parent      MenuItem?  @relation("MenuHierarchy", fields: [parentId], references: [id], onDelete: Cascade)
+  children    MenuItem[] @relation("MenuHierarchy")
+  order       Int
+
+  @@index([menuId, order])
+}
+
+model MediaFolder {
+  id       String        @id @default(uuid())
+  name     String
+  parentId String?
+  parent   MediaFolder?  @relation("FolderHierarchy", fields: [parentId], references: [id])
+  children MediaFolder[] @relation("FolderHierarchy")
+  assets   MediaAsset[]
+}
+
+model MediaAsset {
+  id           String       @id @default(uuid())
+  filename     String
+  originalName String
+  mimeType     String
+  size         Int
+  url          String
+  folderId     String?
+  folder       MediaFolder? @relation(fields: [folderId], references: [id], onDelete: SetNull)
+  alt          String?
+  title        String?
+  description  String?      @db.Text
+  tags         String[]
+  createdAt    DateTime     @default(now())
+
+  @@index([mimeType])
+}
+
+model Service {
+  id           String        @id @default(uuid())
+  slug         String        @unique
+  title        String
+  description  String        @db.Text
+  features     Json
+  benefits     Json
+  pricingInfo  String?       @db.Text
+  ctaLabel     String?
+  ctaHref      String?
+  icon         String?
+  accent       String?
+  bullets      Json?
+  status       ContentStatus @default(DRAFT)
+  order        Int           @default(0)
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+}
+
+model Solution {
+  id         String        @id @default(uuid())
+  slug       String        @unique
+  title      String
+  tagline    String?
+  overview   String        @db.Text
+  features   Json
+  industries Json
+  benefits   Json
+  outcomes   Json?
+  icon       String?
+  status     ContentStatus @default(DRAFT)
+  order      Int           @default(0)
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
+}
+
+model ComplianceFramework {
+  id           String        @id @default(uuid())
+  framework    String
+  slug         String        @unique
+  overview     String        @db.Text
+  requirements Json
+  benefits     Json
+  status       ContentStatus @default(DRAFT)
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+}
+
+model CaseStudy {
+  id          String        @id @default(uuid())
+  slug        String        @unique
+  industry    String
+  title       String
+  excerpt     String        @db.Text
+  challenge   String        @db.Text
+  solution    String        @db.Text
+  results     String        @db.Text
+  testimonial String?       @db.Text
+  metrics     Json
+  tags        String[]
+  accent      String?
+  status      ContentStatus @default(DRAFT)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+}
+
+model BlogPost {
+  id             String        @id @default(uuid())
+  slug           String        @unique
+  title          String
+  excerpt        String        @db.Text
+  body           String        @db.Text
+  author         String?
+  category       String?
+  tags           String[]
+  featuredImage  String?
+  seo            Json?
+  status         ContentStatus @default(DRAFT)
+  publishedAt    DateTime?
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+}
+
+model Resource {
+  id          String        @id @default(uuid())
+  slug        String        @unique
+  title       String
+  type        String
+  excerpt     String        @db.Text
+  body        String?       @db.Text
+  downloadUrl String?
+  status      ContentStatus @default(DRAFT)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+}

@@ -1,0 +1,202 @@
+{
+  "about": {
+    "metadata": {
+      "title": "About Sentinel",
+      "description": "Sentinel is a global cybersecurity consulting and managed services firm helping enterprises defend, detect, and respond — with the rigor regulated industries demand."
+    },
+    "hero": {
+      "eyebrow": "About Sentinel",
+      "titlePrefix": "We are the cybersecurity firm",
+      "titleHighlight": "CISOs call first",
+      "titleSuffix": ".",
+      "description": "Sentinel is a global cybersecurity consulting and managed services firm. We combine the rigor of a top-tier strategy consultancy with the operational depth of a frontline SOC."
+    },
+    "valuesSection": {
+      "eyebrow": "Our values",
+      "heading": "The principles behind every Sentinel engagement.",
+      "description": "We've built our firm around one belief: in cybersecurity, outcomes are the only thing that count."
+    },
+    "values": [
+      {
+        "title": "Mission-driven",
+        "body": "We exist to protect the institutions, services and infrastructure people depend on every day.",
+        "icon": "ShieldIcon"
+      },
+      {
+        "title": "Vendor-objective",
+        "body": "We are deeply certified across the leading platforms — and never paid to recommend them.",
+        "icon": "NetworkIcon"
+      },
+      {
+        "title": "Operational rigor",
+        "body": "Detection-as-code, runbooks under version control, and measurable outcomes — always.",
+        "icon": "EyeScanIcon"
+      },
+      {
+        "title": "Bias for clarity",
+        "body": "From the boardroom to the SOC, we translate security into business outcomes.",
+        "icon": "SparkleIcon"
+      }
+    ],
+    "leadershipSection": {
+      "eyebrow": "Leadership",
+      "heading": "Senior operators. Frontline experience. No theory-only consultants."
+    },
+    "leaders": [
+      {
+        "name": "Elena Vasquez",
+        "role": "Chief Executive Officer",
+        "bio": "Former CISO of a global top-10 bank. 22 years in cyber.",
+        "initials": "EV"
+      },
+      {
+        "name": "Marcus Chen",
+        "role": "Chief Technology Officer",
+        "bio": "Built and ran detection platforms at hyperscale.",
+        "initials": "MC"
+      },
+      {
+        "name": "Aisha Bello",
+        "role": "Head of Managed Detection & Response",
+        "bio": "Ran the SOC for a Fortune 50 retailer through three breach events.",
+        "initials": "AB"
+      },
+      {
+        "name": "Jonas Lindqvist",
+        "role": "Chief Threat Officer",
+        "bio": "Adversary emulation lead, ex-government red team.",
+        "initials": "JL"
+      },
+      {
+        "name": "Priya Raman",
+        "role": "Head of Cloud & DevSecOps",
+        "bio": "20+ years modernizing engineering organizations.",
+        "initials": "PR"
+      },
+      {
+        "name": "David Reinhart",
+        "role": "Head of Incident Response",
+        "bio": "Led IR for over 400 enterprise breaches across 40+ countries.",
+        "initials": "DR"
+      }
+    ],
+    "storySection": {
+      "eyebrow": "Our story",
+      "heading": "A decade of defending the enterprises others can't."
+    },
+    "milestones": [
+      {
+        "year": "2014",
+        "title": "Founded in Dallas, TX",
+        "body": "Two CISOs and an offensive security team set out to build the firm they wished existed."
+      },
+      {
+        "year": "2017",
+        "title": "Launched Sentinel SOC",
+        "body": "Opened our first 24/7 follow-the-sun managed detection and response center."
+      },
+      {
+        "year": "2020",
+        "title": "Global expansion",
+        "body": "Offices in London, Singapore, Toronto and Sao Paulo. 600+ practitioners."
+      },
+      {
+        "year": "2023",
+        "title": "Sentinel AI launches",
+        "body": "First-to-market AI security practice covering NIST AI RMF and the EU AI Act."
+      },
+      {
+        "year": "Today",
+        "title": "1,800+ enterprise clients",
+        "body": "Trusted by global financial, energy, healthcare and government organizations."
+      }
+    ],
+    "careers": {
+      "eyebrow": "Careers",
+      "heading": "Work alongside the best in the industry.",
+      "description": "We're hiring engineers, analysts, consultants and researchers across the globe. If you'd enjoy defending something that matters, we'd love to meet you.",
+      "openRoles": "See open roles",
+      "becomePartner": "Become a partner",
+      "careersEmail": "careers@sentinel.example.com"
+    }
+  },
+  "services": {
+    "metadata": {
+      "title": "Cybersecurity Services",
+      "description": "Sentinel's end-to-end cybersecurity services — MDR/XDR, cloud security, identity, offensive security, incident response, and GRC advisory."
+    },
+    "hero": {
+      "eyebrow": "Services",
+      "titlePrefix": "Cybersecurity services that",
+      "titleHighlight": "cover every layer",
+      "titleSuffix": ".",
+      "description": "Sentinel's services span strategy, engineering, and 24/7 operations — delivered by senior practitioners with decades of frontline experience."
+    },
+    "serviceIndexLabel": "Service"
+  },
+  "solutions": {
+    "metadata": {
+      "title": "Cybersecurity Solutions",
+      "description": "Flagship cybersecurity solutions from Sentinel — zero trust, SOC modernization, data protection, OT security, AI/LLM security, and application security."
+    },
+    "hero": {
+      "eyebrow": "Solutions",
+      "titlePrefix": "Programs that",
+      "titleHighlight": "de-risk the enterprise",
+      "titleSuffix": ".",
+      "description": "Six flagship solutions, each delivered as a complete program — strategy, architecture, engineering, and operations under one roof."
+    }
+  },
+  "caseStudies": {
+    "metadata": {
+      "title": "Case Studies",
+      "description": "How global enterprises across financial services, energy, healthcare, manufacturing and technology partnered with Sentinel to defend what matters."
+    },
+    "hero": {
+      "eyebrow": "Case studies",
+      "titlePrefix": "Outcomes from the world's most",
+      "titleHighlight": "demanding security teams",
+      "titleSuffix": ".",
+      "description": "A selection of recent Sentinel engagements across financial services, energy, healthcare, manufacturing and technology."
+    },
+    "cardLabel": "Case study",
+    "requestStory": "Request the full story"
+  },
+  "contact": {
+    "metadata": {
+      "title": "Contact Sentinel",
+      "description": "Talk to Sentinel about a security program, an active incident or a partnership. Response within one business hour. 24/7 incident hotline."
+    },
+    "hero": {
+      "eyebrow": "Contact",
+      "titlePrefix": "Let's talk about your",
+      "titleHighlight": "security program",
+      "titleSuffix": ".",
+      "description": "Fill out the form below or reach us directly. A senior practitioner will respond within one business hour."
+    },
+    "channels": [
+      {
+        "icon": "ShieldIcon",
+        "title": "General inquiries",
+        "desc": "For new programs, RFPs and partnerships.",
+        "valueType": "email"
+      },
+      {
+        "icon": "AlertIcon",
+        "title": "Active incident hotline",
+        "desc": "24/7 emergency response. Retainer not required.",
+        "valueType": "phone"
+      },
+      {
+        "icon": "NetworkIcon",
+        "title": "Offices",
+        "desc": "Dallas · London · Singapore · Toronto · Sao Paulo",
+        "valueType": "address"
+      }
+    ],
+    "sla": {
+      "title": "SLA",
+      "description": "Response within one business hour. Incident hotline answered 24/7/365 with a one-hour onsite SLA for retainer clients."
+    }
+  }
+}
