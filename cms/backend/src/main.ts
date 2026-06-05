@@ -34,8 +34,11 @@ async function bootstrap() {
   SwaggerModule.setup('api/docs', app, SwaggerModule.createDocument(app, swagger));
 
   const port = process.env.PORT ?? 4000;
-  await app.listen(port);
-  console.log(`CMS API running on http://localhost:${port}/api`);
+  await app.listen(port, '0.0.0.0');
+  console.log(`CMS API running on port ${port} (/api)`);
 }
 
-bootstrap();
+bootstrap().catch((err) => {
+  console.error('Failed to start CMS API:', err);
+  process.exit(1);
+});

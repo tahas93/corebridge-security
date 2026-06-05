@@ -1,5 +1,5 @@
 /**
- * Runs Prisma CLI with env from `.env.local` (dev) or `.env` (production).
+/** Runs Prisma CLI with env from `.env.local` (dev), `.env` (production), or host env vars. */
  * Usage: node scripts/prisma-with-env.mjs migrate deploy
  */
 import { spawnSync } from 'child_process';

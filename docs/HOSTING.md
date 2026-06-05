@@ -193,6 +193,10 @@ Create it from `.env.local.example` before running dev commands.
 
 On Render and similar hosts, set variables in the dashboard instead of creating `.env`. Locally or on a VPS, create `.env` on the server from `.env.example` before `start:prod` or `prisma:migrate`.
 
+**Deploy exits with status 1 immediately**
+
+The start script must run `node dist/main.js` (not `dist/src/main.js`). If you changed `tsconfig.json`, rebuild before redeploying. Check Render logs for `Cannot find module ... dist/main` or `Failed to start CMS API`.
+
 **Wrong database connected**
 
 Check `NODE_ENV`. Development scripts force `NODE_ENV=development`; production scripts force `NODE_ENV=production`.

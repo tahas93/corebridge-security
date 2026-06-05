@@ -5,10 +5,10 @@
   "scripts": {
     "build": "nest build",
     "dev": "cross-env NODE_ENV=development nest start --watch",
-    "start": "cross-env NODE_ENV=development node dist/main",
-    "start:prod": "cross-env NODE_ENV=production node dist/main",
+    "start": "cross-env NODE_ENV=development node dist/main.js",
+    "start:prod": "node dist/main.js",
     "prisma:generate": "prisma generate",
-    "prisma:migrate": "cross-env NODE_ENV=production node scripts/prisma-with-env.mjs migrate deploy",
+    "prisma:migrate": "node scripts/prisma-with-env.mjs migrate deploy",
     "prisma:migrate:dev": "cross-env NODE_ENV=development node scripts/prisma-with-env.mjs migrate dev",
     "prisma:seed": "cross-env NODE_ENV=development ts-node --transpile-only prisma/seed.ts",
     "prisma:seed:prod": "cross-env NODE_ENV=production ts-node --transpile-only prisma/seed.ts",
