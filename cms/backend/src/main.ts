@@ -1,3 +1,4 @@
+import './config/resolve-env';
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
@@ -26,7 +27,7 @@ async function bootstrap() {
 
   const swagger = new DocumentBuilder()
     .setTitle('CoreBridge CMS API')
-    .setDescription('Headless CMS for Cyber Security website')
+    .setDescription('Headless CMS for CoreBridge Web App')
     .setVersion('1.0')
     .addBearerAuth()
     .build();

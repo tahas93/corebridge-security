@@ -1,8 +1,8 @@
 {
-  "name": "sentinel-cyber",
+  "name": "@corebridge/website",
   "version": "1.0.0",
   "private": true,
-  "description": "Sentinel — a modern enterprise cybersecurity website template built with Next.js 14, TypeScript and Tailwind CSS.",
+  "description": "CoreBridge Web App — public marketing website built with Next.js 14, TypeScript and Tailwind CSS.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -23,7 +23,7 @@ import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({ isGlobal: true }),
+    ConfigModule.forRoot({ isGlobal: true, ignoreEnvFile: true }),
     ThrottlerModule.forRoot([{ ttl: 60000, limit: 120 }]),
     PrismaModule,
     RedisModule,

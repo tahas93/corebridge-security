@@ -59,7 +59,10 @@ export class MediaService {
     const { writeFileSync } = await import('fs');
     writeFileSync(filepath, file.buffer);
 
-    const baseUrl = process.env.CMS_PUBLIC_URL ?? 'http://localhost:4000';
+    const baseUrl =
+      process.env.CMS_PUBLIC_URL ??
+      process.env.RENDER_EXTERNAL_URL ??
+      'http://localhost:4000';
     return this.prisma.mediaAsset.create({
       data: {
         filename,

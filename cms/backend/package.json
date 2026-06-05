@@ -4,14 +4,16 @@
   "private": true,
   "scripts": {
     "build": "nest build",
-    "dev": "nest start --watch",
-    "start": "node dist/main",
-    "start:prod": "node dist/main",
+    "dev": "cross-env NODE_ENV=development nest start --watch",
+    "start": "cross-env NODE_ENV=development node dist/main",
+    "start:prod": "cross-env NODE_ENV=production node dist/main",
     "prisma:generate": "prisma generate",
-    "prisma:migrate": "prisma migrate deploy",
-    "prisma:migrate:dev": "prisma migrate dev",
-    "prisma:seed": "ts-node --transpile-only prisma/seed.ts",
-    "prisma:studio": "prisma studio"
+    "prisma:migrate": "cross-env NODE_ENV=production node scripts/prisma-with-env.mjs migrate deploy",
+    "prisma:migrate:dev": "cross-env NODE_ENV=development node scripts/prisma-with-env.mjs migrate dev",
+    "prisma:seed": "cross-env NODE_ENV=development ts-node --transpile-only prisma/seed.ts",
+    "prisma:seed:prod": "cross-env NODE_ENV=production ts-node --transpile-only prisma/seed.ts",
+    "prisma:studio": "cross-env NODE_ENV=development node scripts/prisma-with-env.mjs studio",
+    "prisma:studio:prod": "cross-env NODE_ENV=production node scripts/prisma-with-env.mjs studio"
   },
   "dependencies": {
     "@corebridge/shared": "*",
@@ -52,6 +54,7 @@
     "@types/qrcode": "^1.5.5",
     "@types/uuid": "^10.0.0",
     "prisma": "^6.1.0",
+    "cross-env": "^7.0.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.3"
   }

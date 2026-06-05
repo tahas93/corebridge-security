@@ -1,6 +1,6 @@
-# CoreBridge Security Platform
+# CoreBridge Web App
 
-Monorepo containing a **headless CMS** and the **Sentinel Cyber Security** marketing website. Non-technical users manage all public content through the CMS admin UI—no React code changes required.
+Monorepo containing a **headless CMS** and the **CoreBridge Web App** marketing website. Non-technical users manage all public content through the CMS admin UI—no React code changes required.
 
 ## Structure
 
@@ -22,23 +22,34 @@ project-root/
 npm install
 ```
 
-### 2. Start infrastructure
+### 2. Configure environment
+
+```bash
+cd cms/backend
+copy .env.local.example .env.local   # local dev
+copy .env.example .env               # production (on host only)
+```
+
+- **Dev** (`NODE_ENV=development`) → loads **`.env.local`**
+- **Live** (`NODE_ENV=production`) → loads **`.env`**
+
+See [docs/HOSTING.md](docs/HOSTING.md) for full hosting steps.
+
+### 3. Start infrastructure (local)
 
 ```bash
 npm run docker:up
 ```
 
-Or run PostgreSQL and Redis locally and copy `cms/backend/.env.example` to `cms/backend/.env`.
-
-### 3. Database
+### 4. Database
 
 ```bash
 cd cms/backend
-npx prisma migrate dev --name init
+npm run prisma:migrate:dev   # uses .env.local
 npm run prisma:seed
 ```
 
-### 4. Run all apps
+### 5. Run all apps
 
 ```bash
 npm run dev
@@ -57,6 +68,7 @@ npm run dev
 
 - [Architecture](docs/ARCHITECTURE.md)
 - [Database schema](docs/DATABASE.md)
+- [Hosting & environments (local vs Neon)](docs/HOSTING.md)
 - [Migration guide (JSON → CMS)](docs/MIGRATION.md)
 - [Security](docs/SECURITY.md)
 

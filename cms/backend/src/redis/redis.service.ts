@@ -9,7 +9,12 @@ export class RedisService implements OnModuleDestroy {
     const url = process.env.REDIS_URL;
     if (!url) return null;
     if (!this.client) {
-      this.client = new Redis(url, { maxRetriesPerRequest: 2, lazyConnect: true });
+      const useTls = url.startsWith('rediss://');
+      this.client = new Redis(url, {
+        maxRetriesPerRequest: 2,
+        lazyConnect: true,
+        ...(useTls ? { tls: {} } : {}),
+      });
       this.client.connect().catch(() => {
         this.client = null;
       });

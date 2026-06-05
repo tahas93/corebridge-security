@@ -1,6 +1,6 @@
-# Sentinel — Enterprise Cybersecurity Website
+# CoreBridge Web App — Website
 
-A production-ready, light-mode enterprise cybersecurity website template inspired by leading consulting firms like Optiv. Built with **Next.js 14 (App Router)**, **TypeScript**, and **Tailwind CSS**.
+Public marketing website for the CoreBridge Web App monorepo. Built with **Next.js 14 (App Router)**, **TypeScript**, and **Tailwind CSS**.
 
 ## Highlights
 

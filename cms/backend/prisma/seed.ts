@@ -1,3 +1,4 @@
+import '../src/config/resolve-env';
 import { PrismaClient, PageStatus, ContentStatus } from '@prisma/client';
 import * as bcrypt from 'bcrypt';
 import { readFileSync, existsSync } from 'fs';

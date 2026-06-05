@@ -1,8 +1,8 @@
 {
-  "name": "corebridge-security-platform",
+  "name": "corebridge-web-app",
   "version": "1.0.0",
   "private": true,
-  "description": "Monorepo: Cyber Security website + headless CMS",
+  "description": "Monorepo: CoreBridge Web App — marketing website + headless CMS",
   "workspaces": [
     "website",
     "cms/backend",
@@ -15,6 +15,7 @@
     "dev:cms": "npm run dev -w @corebridge/cms-backend",
     "dev:admin": "npm run dev -w @corebridge/cms-admin",
     "build": "npm run build -w @corebridge/shared && npm run build -w @corebridge/cms-backend && npm run build -w @corebridge/cms-admin && npm run build -w website",
+    "build:cms-api": "npm run build -w @corebridge/shared && npm run prisma:generate -w @corebridge/cms-backend && npm run build -w @corebridge/cms-backend",
     "db:migrate": "npm run prisma:migrate -w @corebridge/cms-backend",
     "db:seed": "npm run prisma:seed -w @corebridge/cms-backend",
     "docker:up": "docker compose -f docker/docker-compose.yml up -d",
