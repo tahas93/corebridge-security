@@ -14,10 +14,15 @@ export function getEnvFilePath(rootDir = join(__dirname, '../..')): string {
   return join(rootDir, getEnvFileName());
 }
 
-export function loadEnvFile(rootDir = join(__dirname, '../..')): string {
+export function loadEnvFile(rootDir = join(__dirname, '../..')): string | null {
   const path = getEnvFilePath(rootDir);
 
   if (!existsSync(path)) {
+    if (isProductionRuntime()) {
+      // Render and similar hosts inject env vars into process.env — no .env file required.
+      return null;
+    }
+
     throw new Error(
       `Env file not found: ${path}. NODE_ENV=${process.env.NODE_ENV ?? '(unset)'} → expected ${getEnvFileName()}`,
     );

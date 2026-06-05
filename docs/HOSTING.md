@@ -9,7 +9,7 @@ The CMS backend uses **two separate env files** (not one file with `_LOCAL` / `_
 | File | When loaded | Purpose |
 |------|-------------|---------|
 | **`.env.local`** | `NODE_ENV` is **not** `production` | Local development |
-| **`.env`** | `NODE_ENV=production` | Live / demo hosting |
+| **`.env`** | `NODE_ENV=production` | Live / demo hosting (optional if the host injects env vars, e.g. Render) |
 
 Selection is automatic in:
 
@@ -94,7 +94,7 @@ Deploy the NestJS API as a **Web Service** from the **repository root** (not `cm
 | **Build Command** | `npm install && npm run build:cms-api` |
 | **Start Command** | `npm run prisma:migrate -w @corebridge/cms-backend && npm run start:prod -w @corebridge/cms-backend` |
 
-Set environment variables in the Render dashboard (from `cms/backend/.env.example`). At minimum: `NODE_ENV`, `DATABASE_URL`, `REDIS_URL`, JWT secrets, and `CORS_ORIGINS`.
+Set environment variables in the Render dashboard (from `cms/backend/.env.example`). At minimum: `NODE_ENV=production`, `DATABASE_URL`, `REDIS_URL`, JWT secrets, and `CORS_ORIGINS`. You do **not** need to create a `.env` file on Render — the dashboard values are injected into `process.env`.
 
 The repo includes a root `.npmrc` with `production=false` so devDependencies (`@nestjs/cli`, `typescript`, `prisma`, etc.) are installed during Render’s build even when `NODE_ENV=production`.
 
@@ -191,7 +191,7 @@ Create it from `.env.local.example` before running dev commands.
 
 **`Env file not found: .env`**
 
-Create `.env` on the server from `.env.example` before `start:prod` or `prisma:migrate`.
+On Render and similar hosts, set variables in the dashboard instead of creating `.env`. Locally or on a VPS, create `.env` on the server from `.env.example` before `start:prod` or `prisma:migrate`.
 
 **Wrong database connected**
 

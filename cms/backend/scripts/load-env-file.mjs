@@ -16,6 +16,11 @@ export function loadEnvFile(rootDir = backendRoot) {
   const path = join(rootDir, getEnvFileName());
 
   if (!existsSync(path)) {
+    if (isProductionRuntime()) {
+      // Render and similar hosts inject env vars into process.env — no .env file required.
+      return null;
+    }
+
     console.error(
       `Error: Env file not found: ${path} (NODE_ENV=${process.env.NODE_ENV ?? 'unset'})`,
     );
