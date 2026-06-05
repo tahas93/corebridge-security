@@ -1,13 +1,10 @@
-'use client';
-
 "use client";
-
 import { useEffect, useState } from "react";
 import Logo from "@/components/brand/Logo";
-import { useContent } from "@/lib/content-client";
+import { useCmsPath } from "@/providers/CmsContentProvider";
 
 export default function PageLoader() {
-  const content = useContent() as Record<string, any>;
+  const pageLoaderText = useCmsPath<string>("common.loading.pageLoader") ?? "Initializing secure session";
   const [done, setDone] = useState(false);
   const [hide, setHide] = useState(false);
 
@@ -42,7 +39,7 @@ export default function PageLoader() {
           <div className="h-full w-full origin-left animate-[fadeIn_0.6s_ease-out_both] bg-gradient-to-r from-brand-blue via-brand-purple to-brand-cyan [background-size:200%_100%] [animation:shimmer_1.6s_linear_infinite]" />
         </div>
         <p className="mt-3 text-xs uppercase tracking-[0.3em] text-slate-600">
-          {content.common.loading.pageLoader}
+          {pageLoaderText}
         </p>
       </div>
     </div>

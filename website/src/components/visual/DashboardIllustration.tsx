@@ -6,9 +6,11 @@ import {
   ShieldIcon,
 } from "@/components/icons/CyberIcons";
 import { useContent } from "@/lib/content-client";
+import { useCmsPath } from "@/providers/CmsContentProvider";
 
 export default function DashboardIllustration() {
   const content = useContent() as Record<string, any>;
+  const liveStatus = useCmsPath<string>("common.status.live") ?? "LIVE";
   const dash = content.home.dashboard as {
     windowTitle: string;
     cards: { label: string; value: string; sub?: string }[];
@@ -45,7 +47,7 @@ export default function DashboardIllustration() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
             </span>
-            {content.common.status.live}
+            {liveStatus}
           </span>
         </div>
 

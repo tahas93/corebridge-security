@@ -93,6 +93,8 @@ async function seedContentEntries() {
     'common.skipToContent': commonBundle.common?.skipToContent,
     'common.homeLabel': commonBundle.common?.homeLabel,
     'common.aria': commonBundle.common?.aria,
+    'common.loading': commonBundle.common?.loading,
+    'common.status': commonBundle.common?.status,
     site: commonBundle.site,
     navigation: header,
     home,
